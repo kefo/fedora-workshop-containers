@@ -1,0 +1,11 @@
+{
+  "name": "docker",
+  "default_attributes": {
+    "solr": {
+        "data_dir": "/data/solr"
+    }
+  },
+  "json_class": "Chef::Environment",
+  "description": "",
+  "chef_type": "environment"
+}

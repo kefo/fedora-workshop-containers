@@ -1,0 +1,7 @@
+{
+    "chef_environment": "docker",
+    "run_list": [
+        "karaf-box::karaf",
+        "karaf-box::docker-run"
+    ]
+}

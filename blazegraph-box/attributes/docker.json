@@ -1,0 +1,7 @@
+{
+    "chef_environment": "docker",
+    "run_list": [
+        "blazegraph-box::blazegraph",
+        "blazegraph-box::docker-run"
+    ]
+}

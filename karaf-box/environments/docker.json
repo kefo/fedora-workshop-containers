@@ -1,0 +1,59 @@
+{
+  "name": "docker",
+  "default_attributes": {
+    "karaf_fcrepo_features": {
+        "triplestore_indexing": {
+            "docker": {
+                "env": "docker",
+                "fcrepo_protocol": "http",
+                "_comment": "The below many not work because docker containers can change the IP at a whim.  Note: no http preceding",
+                "fcrepo_baseURL": "192.168.99.100:8080/fcrepo/rest",
+                "fcrepo_base_container": "/prod",
+                "fcrepo_brokerURL": "tcp://192.168.99.100:61616",
+                "ts_protocol": "http",
+                "ts_query": "192.168.99.100:8081/blazegraph/namespace/kb/sparql",
+                "ts_update": "192.168.99.100:8081/blazegraph/namespace/kb/sparql",
+                "ts_reindex_stream": "activemq:queue:triplestore.prod.reindex"
+            }
+        },
+        "solrize": {
+            "docker": {
+                "env": "docker",
+                "fcrepo_protocol": "http",
+                "_comment": "The below many not work because docker containers can change the IP at a whim.  Note: no http preceding",
+                "fcrepo_baseURL": "192.168.99.100:8080/fcrepo/rest",
+                "fcrepo_base_container": "/prod",
+                "fcrepo_brokerURL": "tcp://192.168.99.100:61616",
+                "solr_updateEndpoint_protocol": "http",
+                "solr_updateEndpoint": "192.168.99.100:8983/solr/prodidx/update",
+                "solrize_reindex_stream": "activemq:queue:solrize.reindex.prod"
+            }
+        },
+        "reindexing": {
+            "docker": {
+                "fcrepo_protocol": "http",
+                "_comment": "The below many not work because docker containers can change the IP at a whim.  Note: no http preceding",
+                "fcrepo_baseURL": "192.168.99.100:8080/fcrepo/rest",
+                "fcrepo_brokerURL": "tcp://192.168.99.100:61616"
+            }
+        },
+        "reindexing_type": {
+            "docker": {
+                "env": "docker",
+                "jetty_host": "localhost",
+                "jetty_port": "9180",
+                "fcrepo_protocol": "http",
+                "_comment": "The below many not work because docker containers can change the IP at a whim.  Note: no http preceding",
+                "fcrepo_baseURL": "192.168.99.100:8080/fcrepo/rest",
+                "fcrepo_base_container": "/prod",
+                "fcrepo_brokerURL": "tcp://192.168.99.100:61616",
+                "ts_protocol": "http",
+                "ts_query": "192.168.99.100:8081/blazegraph/namespace/kb/sparql"
+            }
+        }
+    }
+  },
+  "json_class": "Chef::Environment",
+  "description": "",
+  "chef_type": "environment"
+}

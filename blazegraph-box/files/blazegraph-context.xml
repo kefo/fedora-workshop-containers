@@ -1,0 +1,7 @@
+<Context docBase="/opt/lake/webapps/blazegraph/blazegraph.war"
+         privileged="true"
+         antiResourceLocking="false"
+         antiJARLocking="false"
+         unpackWAR="false"
+         swallowOutput="true">
+</Context>

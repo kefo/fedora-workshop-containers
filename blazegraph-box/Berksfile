@@ -1,0 +1,11 @@
+site :opscode
+# source "https://supermarket.chef.io"
+
+metadata
+
+# This berksfile is for blazegraph
+cookbook 'java'
+cookbook 'tomcat'
+
+
+

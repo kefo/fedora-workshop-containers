@@ -1,0 +1,11 @@
+site :opscode
+# source "https://supermarket.chef.io"
+
+# Use metadata to determine required cookbooks for Fedora
+metadata
+
+# Recipes for Solr.  This recipe will install java. Isn't that nice.
+cookbook 'solr_6'
+
+
+

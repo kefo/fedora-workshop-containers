@@ -1,0 +1,16 @@
+{
+  "name": "docker",
+  "default_attributes": {
+    "java": {
+        "JAVA_OPTS": "-Dcom.bigdata.rdf.sail.webapp.ConfigParams.propertyFile=/opt/lake/etc/blazegraph/RWStore.properties -Dlog4j.configuration=file:/opt/lake/etc/blazegraph/log4j.properties"
+    },
+    "tomcat": {
+        "admin_pass": "admin",
+        "manager_pass": "admin",
+        "tomcat_pass": "admin"
+    }
+  },
+  "json_class": "Chef::Environment",
+  "description": "",
+  "chef_type": "environment"
+}

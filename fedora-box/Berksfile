@@ -1,0 +1,14 @@
+site :opscode
+# source "https://supermarket.chef.io"
+
+# Use metadata to determine required cookbooks for Fedora
+metadata
+
+# Recipes for Fedora built-in Tomcat
+cookbook 'java'
+cookbook 'tomcat'
+
+# Recipes for Fedora database
+cookbook 'database'
+cookbook 'postgresql'
+

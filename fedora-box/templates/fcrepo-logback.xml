@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file><%= node[:fedora][:logdir] %>/fcrepo.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern><%= node[:fedora][:logdir] %>/fcrepo.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history capped at 3GB total size -->
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%p %d{HH:mm:ss.SSS} \(%c{0}\) %m%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="org.fcrepo.auth" additivity="false" level="${fcrepo.log.auth:-INFO}">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="org.fcrepo.connector.file" additivity="false" level="${fcrepo.log.connector.file:-INFO}">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="org.fcrepo.http.api" additivity="false" level="${fcrepo.log.http.api:-INFO}">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="org.fcrepo.http.commons" additivity="false" level="${fcrepo.log.http.commons:-INFO}">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="org.fcrepo.jms" additivity="false" level="${fcrepo.log.jms:-INFO}">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="org.fcrepo.kernel" additivity="false" level="${fcrepo.log.kernel:-INFO}">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="org.fcrepo.transform" additivity="false" level="${fcrepo.log.transform:-INFO}">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="org.fcrepo" additivity="false" level="${fcrepo.log:-INFO}">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <root additivity="false" level="WARN">
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

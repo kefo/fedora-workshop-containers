@@ -1,0 +1,7 @@
+{
+    "chef_environment": "docker",
+    "run_list": [
+        "solr-box::solr",
+        "solr-box::docker-run"
+    ]
+}

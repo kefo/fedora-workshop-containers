@@ -1,0 +1,10 @@
+site :opscode
+# source "https://supermarket.chef.io"
+
+metadata
+
+# Recipes for Karaf
+cookbook 'java'
+cookbook 'karaf'
+
+
