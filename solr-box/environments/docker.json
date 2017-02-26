@@ -2,7 +2,8 @@
   "name": "docker",
   "default_attributes": {
     "solr": {
-        "data_dir": "/data/solr"
+        "data_dir": "/data/solr",
+        "host_alias": "solrbox"
     }
   },
   "json_class": "Chef::Environment",

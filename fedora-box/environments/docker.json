@@ -21,7 +21,8 @@
     "tomcat": {
         "admin_pass": "admin",
         "manager_pass": "admin",
-        "tomcat_pass": "admin"
+        "tomcat_pass": "admin",
+        "host_alias": "fcrepobox"
     }
   },
   "json_class": "Chef::Environment",

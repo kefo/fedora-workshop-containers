@@ -20,3 +20,12 @@ template "/opt/tomcat_7/conf/tomcat-users.xml" do
   mode "0664"
   action :create
 end
+
+# get templated install properties
+template "/opt/tomcat_7/conf/server.xml" do
+  source "tomcat-server.xml"
+  owner 'tomcat_7'
+  group 'tomcat_7'
+  mode "0664"
+  action :create
+end

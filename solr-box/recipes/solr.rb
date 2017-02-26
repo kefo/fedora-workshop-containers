@@ -19,7 +19,7 @@ include_recipe 'solr_6::install'
   end
 end
 
-%w[ /data/solr/data/prodidx /data/solr/data/prodidx/conf  ].each do |path|
+%w[ /data/solr/data/prodidx /data/solr/data/prodidx/conf /data/solr/data/demoidx /data/solr/data/demoidx/conf ].each do |path|
   directory path do
     owner 'solr'
     group 'solr'
@@ -29,7 +29,7 @@ end
 
 # Files to instantiate a core
 cookbook_file "/data/solr/data/prodidx/conf/solrconfig.xml" do
-  source 'solrconfig.xml'
+  source 'prodidx-solrconfig.xml'
   owner 'solr'
   group 'solr'
   mode '0644'
@@ -37,9 +37,32 @@ cookbook_file "/data/solr/data/prodidx/conf/solrconfig.xml" do
 end
 
 cookbook_file "/data/solr/data/prodidx/conf/schema.xml" do
-  source 'schema.xml'
+  source 'prodidx-schema.xml'
   owner 'solr'
   group 'solr'
   mode '0644'
+  action :create
+end
+
+# Files to instantiate a core
+cookbook_file "/data/solr/data/demoidx/conf/solrconfig.xml" do
+  source 'demoidx-solrconfig.xml'
+  owner 'solr'
+  group 'solr'
+  mode '0644'
+  action :create
+end
+
+cookbook_file "/data/solr/data/demoidx/conf/schema.xml" do
+  source 'demoidx-schema.xml'
+  owner 'solr'
+  group 'solr'
+  mode '0644'
+  action :create
+end
+
+template "/opt/solr/server/etc/jetty-http.xml" do
+  source "jetty-http.xml"
+  mode "0664"
   action :create
 end
