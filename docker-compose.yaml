@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  fcrepo:
+    image: kefo/fcrepo:471
+    ports:
+        - "8080:8080"
+        - "61616:61616"
+    networks:
+        workshop:
+            aliases:
+                - fcrepobox
+
+  triplestore:
+    image: kefo/blazegraph:212
+    ports:
+        - "8081:8080"
+    networks:
+        workshop:
+            aliases:
+                - bgbox
+
+  solr:
+    image: kefo/solr:6
+    ports:
+        - "8983:8983"
+    networks:
+        workshop:
+            aliases:
+                - solrbox
+
+  karaf:
+    image: kefo/karaf:405
+    ports:
+        - "9086:9086"
+    stdin_open: true
+    tty: true
+    networks:
+        workshop:
+
+networks:
+    workshop:
+        driver: bridge
