@@ -33,7 +33,7 @@ Cloning this repository is not necessary to run these containers.  This reposito
 you want to modify the Docker files and build the containers with modifications.
 
 It is sufficient to [install Docker](https://docs.docker.com/engine/installation/) and then save a copy of the `docker-compose.yaml` file, which is 
-part of this repository, locally.
+part of this repository, locally. (Cloning the repository is certainly an easy way too.)
 
 ```bash
 curl -OL https://raw.githubusercontent.com/kefo/fedora-workshop-containers/master/docker-compose.yaml
