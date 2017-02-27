@@ -24,7 +24,7 @@ See README files that are part of each 'box' for specifics on building and runni
 those containers.
 
 It will be necessary to make a change to your local `hosts` file.  On a Mac or Linux
-machine, this file is located at `/etc/hosts/`.  Add the following lines:
+machine, this file is located at `/etc/hosts`.  Add the following lines:
 
 ```bash
 127.0.0.1  fcrepobox
@@ -32,7 +32,7 @@ machine, this file is located at `/etc/hosts/`.  Add the following lines:
 127.0.0.1  solrbox
 ```
 
-Then start the containers.  Running each of the following commands in its own terminal window will help
+Then start the containers, each one in its own terminal window.  Running each of the following commands in its own terminal window will help
 to visualize the event messaging and data flow.
 
 ```
