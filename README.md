@@ -20,9 +20,6 @@ not be saved when you exit the container.
 
 ## Getting Started
 
-See README files that are part of each 'box' for specifics on building and running 
-those containers.
-
 It will be necessary to make a change to your local `hosts` file.  On a Mac or Linux
 machine, this file is located at `/etc/hosts`.  Add the following lines:
 
@@ -32,8 +29,19 @@ machine, this file is located at `/etc/hosts`.  Add the following lines:
 127.0.0.1  solrbox
 ```
 
-Then start the containers, each one in its own terminal window.  Running each of the following commands in its own terminal window will help
-to visualize the event messaging and data flow.
+Cloning this repository is not necessary to run these containers.  This repository is only necessary if 
+you want to modify the Docker files and build the containers with modifications.
+
+It is sufficient to [install Docker](https://docs.docker.com/engine/installation/) and then save a copy of the `docker-compose.yaml` file, which is 
+part of this repository, locally.
+
+```bash
+curl -OL https://raw.githubusercontent.com/kefo/fedora-workshop-containers/master/docker-compose.yaml
+```
+
+Then start the containers, each one in its own terminal window.  Running each of the following commands in its 
+own terminal window will help to visualize the event messaging and data flow.
+
 
 ```
 docker-compose up fcrepo
@@ -42,11 +50,12 @@ docker-compose up solr
 docker-compose run karaf bash
 ```
 
+See README files that are part of each 'box' for specifics on building and running 
+those containers.
+
 ### docker-machine
 
-If you use docker-machine, you will need to use the docker-machine's IP address.  
-This is probably 192.168.99.100, but it may be different.
+The above instructions about modifying the `/etc/hosts` file assume you are not using `docker-machine`.  
+If, however, you use docker-machine, you will need to use the docker-machine's IP address in place of 
+'127.0.0.1' in the above example.  This is probably 192.168.99.100, but it may be different.
 
-
-
-  
